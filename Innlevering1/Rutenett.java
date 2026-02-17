@@ -1,4 +1,4 @@
-package Innlevering1;
+
 
 public class Rutenett {
 

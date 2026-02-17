@@ -1,4 +1,4 @@
-package Innlevering1;
+
 
 class TestCelle {
     private static void sjekk (String hva, boolean test) {

@@ -1,4 +1,3 @@
-package Innlevering1;
 
 class TestVerden {
     static void sjekk (String hva, boolean test) {

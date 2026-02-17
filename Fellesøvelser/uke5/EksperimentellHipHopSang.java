@@ -2,7 +2,7 @@ package Fellesøvelser.uke5;
 
 public class EksperimentellHipHopSang extends HipHopSang {
     public EksperimentellHipHopSang(String tittel, String artist, int lengde) {
-        super(tittel, artist, lengde, radioVennlig: false);
+        super(tittel, artist, lengde, radioVennlig false);
     }
 
     @Override

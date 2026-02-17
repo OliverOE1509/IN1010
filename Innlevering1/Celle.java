@@ -1,4 +1,4 @@
-package Innlevering1;
+
 
 public class Celle {
     boolean levende = false;

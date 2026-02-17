@@ -1,4 +1,3 @@
-package Innlevering1;
 
 public class GameOfLife {
     public static void main(String[] args) {
