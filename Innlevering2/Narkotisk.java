@@ -10,6 +10,6 @@ public class Narkotisk extends Legemiddel {
     }
 
     public String toString() {
-        return "id: " + id + " Navn: " + navn + " Pris: " + hentPris() + "Mengde virkestoff: " + mengdeVirkestoff + " Styrke: " + styrke;
+        return "id: " + id + " Navn: " + navn + " Pris: " + hentPris() + "  Mengde virkestoff: " + mengdeVirkestoff + " Styrke: " + styrke;
     }
 }

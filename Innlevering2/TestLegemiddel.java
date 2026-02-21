@@ -15,8 +15,9 @@ public class TestLegemiddel  {
 
         Vanedannende lm3 = new Vanedannende("melatonin", 50, 5, 1);
         Vanedannende lm4 = new Vanedannende("tran", 20, 20, 5);
-        System.out.println(lm3.id);
-        System.out.println(lm4.id);
+        Vanedannende lm5 = new Vanedannende("sanasol", 40, 10, 8);
+
+        Vanlig lm6 = new Vanlig("kokain", 10000, 1);
 
         // Her sjekker jeg at ID stemmer overens med static telleren jeg har
         boolean testLMId1 = testLegemiddelId(lm1, 0);
@@ -35,5 +36,12 @@ public class TestLegemiddel  {
         boolean testLMId4 = testLegemiddelId(lm4, 1);
         System.out.println("Sjekker Vanedannede ID objekt3: " + testLMId3);
         System.out.println("Sjekker Vanedannede ID objekt4: " + testLMId4);
+
+        System.out.println(lm1.toString());
+        System.out.println(lm2.toString());
+        System.out.println(lm3.toString());
+        System.out.println(lm4.toString());
+        System.out.println(lm5.toString());
+        System.out.println(lm6.toString());
     } 
 }

@@ -8,6 +8,6 @@ public class Vanlig extends Legemiddel {
 
     }
     public String toString() {
-        return "id: " + id + " Navn: " + navn + " Pris: " + hentPris() + "Mengde virkestoff: " + mengdeVirkestoff;
+        return "id: " + id + " Navn: " + navn + " Pris: " + hentPris() + " Mengde virkestoff: " + mengdeVirkestoff;
     }
 }
