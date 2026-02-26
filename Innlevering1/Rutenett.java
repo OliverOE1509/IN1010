@@ -53,7 +53,7 @@ public class Rutenett {
     public void settNaboer(int rad, int kol) {
         Celle meg = hentCelle(rad, kol);
 
-        for (int dr = -1; dr <= 1; dr++) {
+        for (int dr = -1; dr <= 1; dr++) {          /* På linje 56-58 har jeg spurt KI om hvordan man kan definere naboene rundt en celle. Jeg kopierte ikke kode direkte fra KI, men jeg kommuniserte problemet, og så hva han foreslo. */ 
             for (int dk = -1; dk <= 1; dk++) {
                 if (dr ==0 && dk == 0) {
                     continue;
