@@ -3,10 +3,11 @@ import java.util.Iterator;
 
 public class TallIterator implements Iterator<Integer> {
     private IntListe liste;
-    private int index = 0;
+    private int index;
 
     public TallIterator(IntListe liste) {
         this.liste = liste;
+        index = 0;
     }
 
     @Override

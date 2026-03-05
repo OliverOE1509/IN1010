@@ -12,9 +12,11 @@ class Node {
         return neste;
     }
 
-    public void settNeste() {
-
+    public void settNeste(Node neste) {
+        this.neste = neste;
     }
 
-    public int hentVerdi()
+    public int hentVerdi() {
+        return verdi;
+    }
 }

@@ -1,37 +1,40 @@
 package andreMars;
 
-public class IntLenketListe implements intListe {
+public class IntLenketListe implements IntListe {
     private int size = 0;
     private Node start;
 
     @Override
     public void add(int i) {
+        Node nyNode = new Node(i);
+
         if (start == null) {
-            start = new Node(i);
+            start = nyNode;
         } else {
             Node peker = start;
             while ( peker.hentNeste() != null ) {
                 peker = peker.hentNeste();
             }
             peker.settNeste(new Node(i));
-            size++;
         }
+        size++;
     }
 
     @Override
-    public int get() {
-        if (index < 0 || indez >= size) {
-            System.err.println("Feil index");
-        }
-
+    public int get(int index) {
         Node peker = start;
         for (int i = 0; i < index; i++) {
             peker = peker.hentNeste();
         }
+        return peker.hentVerdi();
     }
 
     @Override
     public int size() {
         return size;
+    }
+
+    public int hentFørste() {
+        return start.hentVerdi();
     }
 }   
