@@ -55,10 +55,12 @@ class TestIndeksertListe {
 
 	// Test 2
 	k = new IndeksertListe<>();
+	k.toString();
 	k.leggTil(0, 101);
 	k.leggTil(102);
 	k.leggTil(0, 103);
 	k.leggTil(3, 104);
+	
 	k.leggTil(3, 105);
 	f = new int[] { 103, 101, 102, 105, 104 };
 	if (test(2, "IndeksertListe med 5 elementer", k, f)) {

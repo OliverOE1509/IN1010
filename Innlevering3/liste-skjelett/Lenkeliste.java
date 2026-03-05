@@ -3,8 +3,8 @@ abstract class Lenkeliste <E> implements Liste<E> {
     public Node hode;
 
     protected class Node {
-        private E verdi;
-        private Node neste;
+        E verdi;
+        Node neste;
 
         public Node (E verdi) {
             this.verdi = verdi;
