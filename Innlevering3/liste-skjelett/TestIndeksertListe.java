@@ -49,18 +49,20 @@ class TestIndeksertListe {
 	int[] f = new int[] {};
 	if (test(1, "Tom IndeksertListe", k, f)) {
 	    p("OK");  ++antOK;
+		
 	} else {
 	    ++antFeil;
 	}
 
 	// Test 2
 	k = new IndeksertListe<>();
-	k.toString();
 	k.leggTil(0, 101);
 	k.leggTil(102);
+
 	k.leggTil(0, 103);
+
 	k.leggTil(3, 104);
-	
+
 	k.leggTil(3, 105);
 	f = new int[] { 103, 101, 102, 105, 104 };
 	if (test(2, "IndeksertListe med 5 elementer", k, f)) {
@@ -97,6 +99,7 @@ class TestIndeksertListe {
 	k.leggTil(0, 402);
 	k.leggTil(2, 403);
 	k.sett(1, -1);
+	
 	f = new int[]{ 402, -1, 403 };
 	if (test(4, "Endre elementer", k, f)) {
 	    p("OK");  ++antOK;
@@ -119,6 +122,7 @@ class TestIndeksertListe {
 	// Test 6
 	k = new IndeksertListe<>();
 	k.leggTil(1001);
+	
 	info(6, "Ulovlig fjerning");
 	try {
 	    k.fjern(-1);

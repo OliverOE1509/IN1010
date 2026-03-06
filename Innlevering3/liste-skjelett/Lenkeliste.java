@@ -25,10 +25,10 @@ abstract class Lenkeliste <E> implements Liste<E> {
 
     @Override
     public String toString () {
-        String retStr = "";
+        String retStr = "Innhold:\n";
         Node current = hode;
-        while (hode != null) {
-            retStr += hode.hentVerdi() + "\n";
+        while (current != null) {
+            retStr += current.hentVerdi() + "\n";
             current = current.hentNeste();
         }
         return retStr;
@@ -41,17 +41,16 @@ abstract class Lenkeliste <E> implements Liste<E> {
         while (current != null) {
             counter++;
             current = current.hentNeste();
-            
         }
         return counter;
     }
 
     @Override
     public void leggTil (E x) {
+        Node nyNode = new Node(x);
         if (hode == null) {
-            hode = new Node(x);
+            hode = nyNode;
         } else {
-            Node nyNode = new Node(x);
             Node current = hode;
             while (current.hentNeste() != null) {
                 current = current.hentNeste();
@@ -65,8 +64,8 @@ abstract class Lenkeliste <E> implements Liste<E> {
         if (hode == null) {
             throw new UgyldigListeindeks(0);
         } else {
-            Node current = hode;
-            return current.hentVerdi();
+            //Node current = hode;
+            return hode.hentVerdi();
         }
     }
 

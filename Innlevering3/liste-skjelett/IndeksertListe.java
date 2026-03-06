@@ -1,62 +1,82 @@
 class IndeksertListe <E> extends Lenkeliste<E> {
 
-    public void leggTil (int pos, E x) {
-        if (0 < pos && pos <= størrelse()) {
-            Node current = hode;
-            for (int i = 1; i < pos-1 && current != null; i++) {
-                current = current.hentNeste();
-            }
-            Node nyNode = new Node(x);
-            nyNode.neste = current.hentNeste();
-            current.neste = nyNode;
+    public void print(String s) {
+        System.out.println(s);
+    }
 
-        } else if (pos == 0) {
-            Node nyNode = new Node(x);
-            nyNode.settNeste(hode);
-            hode = nyNode;
-        } else {
+    public void leggTil (int pos, E x) {
+        if (pos < 0 || pos > størrelse()) {
             throw new UgyldigListeindeks(pos);
+        }
+        int index = 0;
+        Node nyNode = new Node(x);
+        if (pos == 0) {
+            nyNode.neste = hode;
+            hode = nyNode;
+            index++;
+        }
+        else {
+            Node current = hode;
+            while (index < pos - 1) {
+                current = current.neste;
+                index++;
+            }
+            nyNode.neste = current.neste;
+            current.neste = nyNode;
         }
     }
 
     public void sett (int pos, E x) {
+        if (pos < 0 || pos >= størrelse()) {
+            throw new UgyldigListeindeks(pos);
+        }
 
-        if (0 < pos && pos < størrelse()) {
+        if (pos == 0) {
+            hode.verdi = x;
+        } else {
             Node current = hode;
-            for (int i = 1; i < pos-1; i++) {
-                current = current.hentNeste();
+            int index = 0;
+
+            while (current != null && index < pos) {
+                current = current.neste;
+                index++;
             }
             current.verdi = x;
+            
+            
         }
     }
 
     public E hent (int pos) {
-        if (0 < pos && pos < størrelse()) {
-            Node current = hode;
-            for (int i = 1; i < pos-1; i++) {
-                current = current.hentNeste();
-            }
-            return current.hentVerdi();
-        } else if (pos == 0) {
-            return hode.hentVerdi();
-        } else {
-            return null;
+        if (pos < 0 || pos >= størrelse()) {
+            throw new UgyldigListeindeks(pos);
         }
+        int index = 0;
+        Node current = hode;
+        while (index < pos) {
+            current = current.neste;
+            index++;
+        }
+        return current.verdi;
     }
 
     public E fjern (int pos) {
-
-        Node temp = hode;
-        if (pos == 1) {
-            hode = temp.hentNeste();
-            return hode;
-        } 
-        Node prev = null;
-        for (int i = 1; i < pos; i++) {
-            prev = temp;
-            temp = temp.hentNeste();
+        if (pos < 0 || pos >= størrelse()) {
+            throw new UgyldigListeindeks(pos);
         }
-        prev.neste = temp.neste;
-        return hode;
+        Node toRemove;
+        Node current = hode;
+        if (pos == 0) {
+            toRemove = hode;
+            hode = hode.neste;
+            return toRemove.verdi;
+        } else {
+            for (int i = 0; i < pos-1; i++) {
+                current = current.neste;
+            }
+            toRemove = current.neste; 
+            current.neste = current.neste.neste;
+            return toRemove.verdi;
+        }
     }
 }
