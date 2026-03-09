@@ -64,7 +64,6 @@ abstract class Lenkeliste <E> implements Liste<E> {
         if (hode == null) {
             throw new UgyldigListeindeks(0);
         } else {
-            //Node current = hode;
             return hode.hentVerdi();
         }
     }

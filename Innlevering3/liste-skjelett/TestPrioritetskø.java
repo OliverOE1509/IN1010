@@ -65,7 +65,10 @@ class TestPrioritetskø {
 	// Test 3
 	k = new Prioritetskø<String>();
 	k.leggTil("Omega");  k.leggTil("Theta");  k.leggTil("Beta");
+	System.out.println(k.toString());
 	k.leggTil("Alfa");  k.leggTil("Gamma");
+
+	//System.out.println(k.toString());
 	f = new String[] {"Alfa", "Beta", "Gamma", "Omega", "Theta"};
 	if (test(3, "Prioritetskø med 5 elementer", k, f)) {
 	    p("OK");  ++antOK;

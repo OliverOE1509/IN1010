@@ -1,8 +1,8 @@
 class ParentClass {
-    int tall = 1;
+    int tall;
 
-    public ParentClass(int t) {
-        tall = t;
+    public ParentClass(int tall) {
+        this.tall = tall;
     }
 
     public int leggTil(int x) {

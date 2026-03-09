@@ -4,10 +4,9 @@ class SubClass extends ParentClass {
     }
 
 
-    public void main (String[] args) {
+    public static void main (String[] args) {
         ParentClass en = new SubClass(5);
-        System.out.println(tall);
-        //System.out.println(en.leggTil((5)));
+        System.out.println(en.leggTil(6));
     }
 }
 
