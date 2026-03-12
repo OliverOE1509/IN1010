@@ -1,13 +1,10 @@
 package andreMars;
+
 import java.util.Iterator;
 
-public interface IntListe extends Iterable<Integer> {
-    public void add(int e);
-    public int get(int index);
+public interface IntListe<T> extends Iterable<T> {
+    public void add(T e);
+    public T get(int index);
     public int size();
 
-    @Override
-    public default Iterator<Integer> iterator() {
-        return new TallIterator(this);
-    }
 }

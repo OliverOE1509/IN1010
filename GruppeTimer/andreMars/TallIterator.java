@@ -1,12 +1,12 @@
 package andreMars;
 import java.util.Iterator;
 
-public class TallIterator implements Iterator<Integer> {
+public class TallIterator<E> implements Iterator<E> {
     private IntListe liste;
     private int index;
 
-    public TallIterator(IntListe liste) {
-        this.liste = liste;
+    public TallIterator(IntListe l) {
+        liste = l;
         index = 0;
     }
 
@@ -15,7 +15,9 @@ public class TallIterator implements Iterator<Integer> {
         return index < liste.size();
     }
 
+    @Override
     public Integer next() {
         return liste.get(index++);
     }
+    
 }

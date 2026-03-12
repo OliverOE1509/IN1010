@@ -1,22 +1,27 @@
 package andreMars;
 
 public class IntLenketListe implements IntListe {
-    private int size = 0;
+    private int size;
     private Node start;
 
+    public IntLenketListe() {
+        size = 0;
+    }
+
     @Override
-    public void add(int i) {
-        Node nyNode = new Node(i);
+    public void add(int e) {
+        Node nyNode = new Node(e);
 
         if (start == null) {
             start = nyNode;
         } else {
             Node peker = start;
-            while ( peker.hentNeste() != null ) {
+            while (peker.hentNeste() != null) {
                 peker = peker.hentNeste();
             }
-            peker.settNeste(new Node(i));
+            peker.settNeste(nyNode);
         }
+
         size++;
     }
 
@@ -28,7 +33,7 @@ public class IntLenketListe implements IntListe {
         }
         return peker.hentVerdi();
     }
-
+    
     @Override
     public int size() {
         return size;
@@ -37,4 +42,4 @@ public class IntLenketListe implements IntListe {
     public int hentFørste() {
         return start.hentVerdi();
     }
-}   
+}

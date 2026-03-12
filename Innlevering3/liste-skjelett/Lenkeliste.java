@@ -1,4 +1,4 @@
-abstract class Lenkeliste <E> implements Liste<E> {
+abstract class Lenkeliste <E> implements Liste<E>{
 
     public Node hode;
 

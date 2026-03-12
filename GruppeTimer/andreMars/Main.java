@@ -1,22 +1,26 @@
 package andreMars;
-import java.util.Arrays;
-public class Main {
-    public static void main (String[] args) {
-        IntListe liste = new ArrayIntList();
-        IntListe lenkeListe = new IntLenketListe();
+
+class main {
+    public static void main(String[] args) {
+
+        IntListe liste = new IntArrayListe();
+        IntListe lenketListe = new IntLenketListe();
+
+
 
         for (int i = 0; i < 40; i++) {
             liste.add(i);
-            lenkeListe.add(i);
+            lenketListe.add(i);
         }
 
         for (int tall : liste) {
             System.out.print(tall + " ");
         }
         System.out.println();
-        for (int tall : lenkeListe) {
+        for (int tall : lenketListe) {
             System.out.print(tall + " ");
         }
         System.out.println();
+
     }
 }
