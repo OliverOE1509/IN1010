@@ -1,0 +1,87 @@
+Oppg2
+ 
+Datamaskintastatur - tast : komp
+Datamaskin - student : komp 
+Operativsystem - Windows : arv
+Datamaskin - stasjonær maskin : arv
+Datamaskin - prosessor : komp
+Datamaskin - datamus : komp
+Datamaskin - datasal : komp
+Forelesning - foreleser : komp
+Datamaskin - operativsystem : komp
+ESC-tast - tast : arv
+
+
+
+Oppg3
+
+import java.io.File;
+import java.util.Scanner;
+
+class LesFil {
+    public static void main (String[] args) {
+        Scanner s = null;
+        try {
+            s = new Scanner(new File('data.txt'));
+        } catch (Exception e) {
+            System.out.println("Kan ikke lese data.txt");
+            System.exit(1)
+        }
+        System.out.println(s.nextLine());
+    }
+}
+
+Oppg4
+
+class Hundeglam {
+    public static void main (String[] args) {
+        Hund h1, h2, h3;
+        h1 = new Hund("Voff-voff");
+        h2 = new Hund("bjeff-bjeff");
+        h2 = h1;
+        h1 = null;
+        h3 = h2;
+        h3.bjeff();
+
+    }
+}
+
+
+class Hund {
+    private String voff;
+
+    Hund(String bjeff) {
+        voff = bjeff;
+    }
+
+    public void bjeff() {
+        System.out.println(voff);
+    }
+}
+
+Oppg9
+
+class Bil {
+    Bil forrige;
+    Bil neste;
+}
+
+class BilListe {
+    Bil første, siste;
+
+    public void settInnFør(Bil ny, Bil erILista) {
+        if (første == null) {
+            første = ny; siste = ny;
+        } else {
+            ny.neste = erILista;
+            if (første == erILista) {
+                første.forrige = ny;
+                første = ny;
+            } else {
+                ny.forrige = erILista.forrige;
+                erILista.forrige.neste = ny;
+                erILista.forrige = ny;
+            }
+        }
+    }
+}

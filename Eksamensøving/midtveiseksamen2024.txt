@@ -1,0 +1,137 @@
+
+Oppg 1
+
+class Pakke {
+    int vekt;
+    Pakke (int v) {
+        vekt = v;
+    }
+}
+
+class LagPakke {
+    public static void main (String[] args) {
+        Pakke min, din;
+        min = new Pakke(5);
+        din = min;
+        int vekten = din.vekt;
+        System.out.println(vekten);
+    }
+}
+
+
+Oppg 2
+
+Bok – illustrasjon : komposisjon 
+Hjul – sykkelhjul : arv
+Sete - sykkel : komposisjon
+bokhandel - bok : komposisjon
+kjøretøy - sykkel : arv
+bil - taxi : arv
+bil - hjul : komposisjon
+butikk - bokhandel : arv
+terrengsykkel - sykkel : arv
+person - professor : arv
+
+
+
+Oppg 3
+
+import java.util.Scanner;
+
+class MinstAv5 {
+    public static void main (String[] args) {
+        Scanner tastatur = new Scanner(System.in);
+        int min = 0;
+        for (int i = 1; i <= 5; i++) {
+            int v = tastatur.nextInt();
+            if (i == 1 || v < min) {
+                min = v
+            }
+        }
+        System.out.println(min);
+    }
+}
+
+
+Oppg 4
+
+Eva: 7 og 8
+Ole: 10 og 6
+
+
+Oppg 5
+
+Nr1: Eva
+Nr2: Eva
+Nr3: Ole
+
+
+Oppg 6
+
+Tutsi veier: 3320
+Mons veier: 4120
+Gråpus veier: 5400
+
+Oppg 7
+
+tall nr 0: 1
+tall nr 1: 2
+tall nr 2: 4
+tall nr 3: 3
+
+
+Oppg 8
+
+class Liste<T> {
+    class Node {
+        Node neste;
+        T data;
+
+        void skrivRekursivt(){
+            if (neste != null) {
+                System.out.println(data.toString());
+            }
+            data != null;
+        }
+    }
+
+    Node start = null;
+
+    void skrivBaklengs() {
+        if (start != null) {
+            start.skrivRekursivt();
+        }
+    }
+}   
+
+
+Oppg 9
+
+Bruttopris 0: 6
+vanligpris 0: 3
+
+bruttopris 1: 7
+vanligpris 1: 7
+
+bruttopris 2: 6
+vanligpris 2: 12
+
+bruttopris 3: 40
+vanligpris 3: 20
+
+
+
+oppg 10
+
+feil
+feil
+ok
+feil
+ok
+feil
+ok
+ok
+feil
+feil
+
+
