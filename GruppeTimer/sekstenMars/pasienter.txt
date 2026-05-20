@@ -1,0 +1,5 @@
+Elias Johnsen;7
+Astrid Berg;2
+Noah Solberg;3
+Ingrid Haugen;10
+Magnus Lie;4

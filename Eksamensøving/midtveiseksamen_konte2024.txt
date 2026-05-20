@@ -1,0 +1,206 @@
+
+
+oppg1
+
+int taVare = tall[pos]
+tall[pos] = ny
+return taVare
+
+
+RIKTIG 6
+
+oppg2
+
+class EnkelProgrammering {
+    public static void main (String[] args) {
+        Brev b1, b2;
+        b1 = new Brev(19);
+        b2 = b1;
+        System.out.println("Brevets vekt: " + b2.finnVekt());
+    }
+}
+
+class Brev {
+    private int vekt;
+    Brev(int v) {
+        vekt = v;
+    }
+    int finnVekt() {
+        return vekt;
+    }
+}
+
+RIKTIG 6
+
+
+Oppg3
+
+import java.util.Scanner;
+
+class SkrivTall {
+    public static void main (String[] args) {
+        int[] tallene = new int[10];
+        int antallTall = 0;
+        Scanner tastatur = new Scanner(System.in)
+        while (antallTall < 10) {
+            int v = tastatur.nextInt();
+            if (v < 0) {
+                break;
+            }
+            tallene[antallTall] = v;
+            antallTall = antallTall + 1;
+
+        }
+
+        for (int i = antallTall - 1; i >= 0; i--) {
+            System.out.println(tallene[i]);
+        }
+    }
+}
+
+RIKTIG 11
+
+
+
+Oppg4
+
+Ole: Slitern
+Per: Svarten
+Anne: Blakken
+Linda: Svarten
+Trine: Trofast
+
+
+RIKTIG 10
+
+Oppg6
+
+
+class Dobbeltliste<T> {
+    class Node {
+        Node forrige, neste;
+        T data;
+    }
+
+    Node første, siste;
+
+    T fjernførste() {
+        Node resP = første
+        første = første.neste;
+        return resP.data;
+    }
+
+    T fjernSiste() {
+        Node resP = siste;
+        siste = siste.forrige;
+        return resP.data;
+    }
+
+    T hentNr(int n) {
+        Node nodeP = første;
+        for (int i = 0; i < n; i++) {
+            nodeP = nodeP.neste;
+        }
+        return nodeP.data;
+    }
+}
+
+RIKTIG 9
+
+
+Oppg7
+
+class KaninRekursjonTest {
+    public static void main (String[] args) {
+        Kaninbeholder kaninbur = new Kaninbeholder();
+        Kanin svar = kaninbur.finnEldste();
+        System.out.println("Den eldste er " + svar.alder + " år");
+    }
+}
+
+class Kaninbeholder { 
+    Kanin første; 
+    Kaninbeholder () {
+        første = new Kanin(12);
+        for(inti=5; i>0; i--) {
+            Kanin denne = første;
+        første = new Kanin(i);
+        første.neste = denne;
+        }
+    }
+
+    Kanin finnEldste() {
+        return letEtterEldste(neste);
+    }
+}
+
+class Kanin {
+    Kanin neste;
+    int alder;
+
+    Kaning(int a) {
+        alder = a;
+    }
+
+    Kanin letEtterEldste() {
+        Kanin resultat = null;
+
+        if (gammel != null) {
+            Kanin gammel = resultat;
+            if (neste == null) {
+                resultat = gammel;
+            }
+        }
+        return resultat;
+    }
+}
+
+
+Oppg8
+
+32
+12
+13
+17
+19
+24
+
+
+oppg9
+
+class Bil {
+    Bil forrige, neste;
+}
+
+class BilKø{
+    Bil første, siste;
+
+    void taUtInni(Bil b) {
+        b.forrige.neste = b.neste; b.neste.forrige = b.forrige;
+        b.neste = null; b.forrige = null;
+    }
+
+    void settInn(Bil b) {
+        if (første == null) {
+            første = b;
+        } else {
+            b.forrige = siste; siste.neste = b;
+        }
+        b = siste
+    }
+}
+
+
+oppg10
+
+Snorre internpris = 1000
+Linux internpris = 320
+big java = 480
+krig og fred = 2000
+sherlock holmes = 180
+
+RIKTIG 10
+
+oppg11
+
+3 poeng

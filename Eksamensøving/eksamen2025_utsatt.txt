@@ -1,0 +1,228 @@
+Oppg 1
+
+public static int settInnOgReturner(int[] tall, int pos, int ny) {
+    int taVare = tall[pos];
+    tall[pos] = ny;
+    return taVare;
+}
+
+
+Oppg 2 
+
+class Bil {
+    Bil neste;
+}
+
+class BilListe {
+    Bil første = new Bil();
+    Bil siste = new Bil();
+
+    BilListe() {
+        første.neste = siste;
+    }
+
+    public void settInnBak(Bil erILista, Bil ny) {
+        ny.neste = erILista.neste;
+        erILista.neste = ny; 
+    }
+}
+
+We need to write "ny.neste = erILista.neste" first, and then write "erILista.neste = ny", becuase "erILista.neste = ny" loses access to erILista.neste, which we want ny.neste to point at.
+
+
+
+Oppg 3
+
+System.out.println(a.resultat()); 2
+System.out.println(b.resultat()); 5
+System.out.println(c.resultat()); 6
+System.out.println(d.resultat()); 6
+System.out.println(e.resultat()); 5
+System.out.println(c.resultat(4)); 10
+System.out.println(d.resultat(5)); 25
+System.out.println(aa.resultat()); 15
+
+
+
+Oppg 4
+
+int i = 1/0; kk
+System.out.println(this.toString()); IK
+return 42; IK
+String s = args[5]; KK
+A a = new A(); kjøre
+System.out.println(args[0]); Kjøre
+Object s = "Hei!"; IK
+int i = null; KK
+return; kjøre
+String s = new Object()
+
+
+Oppg 5
+
+class StrengInput {
+    public static List<String> hent() {
+        Scanner in = new Scanner(System.in);
+        List<String> strengListe = new LinkedList<String>();
+        String brukerStreng = "IkkeTom";
+        while (! brukerStreng.equals("")) {
+            brukerStreng = in.nextLine();
+            strengListe.add(brukerStreng);
+        }
+        return strengListe;
+    }
+}
+
+
+
+Oppg 6
+
+public static void settInnIArray(int[] a, int ix, int v) {
+    if (ix >= 0 && ix < a.length) {
+        return a[ix];
+    }
+}
+
+public static int hentFraArray(int[] a, int ix) {
+    if (ix < 0) {
+        return a[0];
+    }
+    else if (ix >= a.length) {
+        return a[a.length-1];
+    } 
+    else {
+        return a[ix];
+    }
+}
+
+
+oppg 7
+
+abstract class EnVeis {
+    EnVeis neste;
+}
+
+class EnVeisBeholder<E extends EnVeis> {
+    private E første, siste;
+
+    public void settInnSist(E ny) {
+        if (første == null) {
+            første = ny; 
+            siste = ny;
+        } else {
+            siste.neste = ny;
+            ny.siste = ny;
+        }
+    }
+
+    public E taUtFørst() {
+        if (første == null) {
+            return null;
+        }
+        E ut = første;
+        if (første == siste) {
+            første = null;
+            siste = null;
+        } else {
+            første = (E) første.neste;
+        }
+        return ut;
+    }
+}
+
+
+oppg 9
+
+class Spellemann {
+    public static void main (String[ ] args) {
+        Ku litago = new Ku ("Litago");
+        Fele gamlefela = new Fele ("Gamlefela");
+        Mann per = new Mann(gamlefela); Mann ole = new Mann(litago); per.byttebort(ole); ole.byttebort(per);
+        per.skriv(); ole.skriv();
+    }
+}
+interface KanEies { 
+    void skriv(); 
+} 
+
+class Verdi implements KanEies {
+    String navn;
+    Verdi(String n) {
+        navn = n;
+    }
+    public void skriv() {
+        System.out.println(navn);
+    }
+}
+
+class Ku extends Verdi {
+    Ku(String n) {
+        super(n);
+    }
+}
+
+class Fele extends Verdi {
+    Fele(String n) {
+        super(n);
+    }
+}
+
+class Mann {
+    KanEies min;
+    Mann (KanEies start) {
+        min = start;
+    }
+    public void skriv ( ) {
+        min.skriv();
+    }
+    public void byttebort (Mann andre) {
+        KanEies temp = min;
+        min = andre.min;
+        andre.min = temp;
+    }
+}
+
+
+
+oppg 10;
+
+Pølse - matvare : Arv
+Butikkansatt - butikk : komposisjon
+Butikkansatt - ekspeditør : arv
+brød - loff : arv
+butikk - matvarebutikk : arv
+matvarebutikk - matvare : komposisjon
+brød - brødpose : komposisjon
+pølse - medisterpølse : arv
+egg - eggkartong : komposisjon
+butikk - butikkjede : komposisjon
+
+
+ALT RIKTIG!!
+
+
+oppg 11
+
+class Lager implements Iterable<String> {
+    String[] innhold = new String[10];
+
+    @Override
+    public Iterator<String> iterator() {
+        return new LagerIterator();
+    }
+}
+
+class LagerIterator implements Iterator<String> {
+    int ix = innhold.length - 1;
+
+    @Override
+    public boolean hasNext() {
+        return ix >= 0;
+    }
+
+    @Override String next() {
+        String res = innhold[ix];
+        ix = ix - 1;
+        return res;
+    }
+}
