@@ -2,9 +2,9 @@ package Eksamen_2022_del2;
 
 public class Vanligrom extends Rom implements Kjøkken {
     final int kvmKjøkken;
-    public Vanligrom(int romNr, int kvm, int antSenger, int etasje) {
+    public Vanligrom(int romNr, int kvm, int antSenger, int etasje, int kvmKjøkken) {
         super(romNr, kvm, antSenger, etasje);
-        kvm += kvmKjøkken();
+        this.kvmKjøkken = kvmKjøkken;
     } 
 
     @Override
